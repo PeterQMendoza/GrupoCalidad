@@ -11,4 +11,11 @@ class Producto extends Model
 
     protected $primaryKey='PRO_ID';
 
+    protected $guarded=[];
+
+    protected $casts=[
+        'PRO_Precio'=>'integer',
+    ];
+
 }
+

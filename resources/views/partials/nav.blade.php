@@ -13,11 +13,17 @@
             </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                @lang('Workshops')
+                @lang('Productos')
                 </a>
+                <div>
+                    <a href="{{route('productos.index')}}">View</a>
+                </div>
             </li>
             <li class="nav-item">
                 <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">@lang('Others')</a>
+            </li>
+            <li class="nav-item {{setActive('about')}}">
+                <a class="nav-link" href="{{route('about')}}">@lang('About')</a>
             </li>
         </ul>
     </div>
