@@ -25,3 +25,8 @@ Route::get('/producto/{producto}/editar','ProductoController@edit')->name('produ
 Route::patch('/producto/{producto}','ProductoController@update')->name('productos.update');
 Route::post('/producto','ProductoController@store')->name('productos.store');
 Route::get('/producto/{producto}','ProductoController@show')->name('productos.show');
+
+Route::delete('/producto/{producto}','ProductoController@destroy')->name('productos.destroy');
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

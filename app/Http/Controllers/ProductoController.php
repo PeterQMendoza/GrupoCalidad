@@ -24,7 +24,9 @@ class ProductoController extends Controller
     }
     public function create()
     {
-        return view('productos.create');
+        return view('productos.create',[
+            'producto'=>new Producto
+        ]);
     }
 
     public function store(SaveProductoRequest $request)
@@ -32,7 +34,7 @@ class ProductoController extends Controller
         
         Producto::create($request->validated());
 
-        return redirect()->route('productos.index');
+        return redirect()->route('productos.index')->with('status','El producto fue agregado con exito');
     }
 
     public function edit(Producto $producto)
@@ -45,6 +47,12 @@ class ProductoController extends Controller
     public function update(Producto $producto,SaveProductoRequest $request)
     {
         $producto->update($request->validated());
-        return redirect()->route('productos.show',$producto);
+        return redirect()->route('productos.show',$producto)->with('status','El producto fue actualizado con exito');
+    }
+
+    public function destroy(Producto $producto)
+    {
+        $producto->delete();
+        return redirect()->route('productos.index')->with('status','El producto fue eliminado con exito');
     }
 }

@@ -32,5 +32,6 @@
         @endforelse
         {{$producto->links()}}
         <a href="{{route('productos.create')}}">NUevo Producto</a>
+
     </div>
 @endsection
