@@ -16,6 +16,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::view('/','home')->name('home');
 Route::view('/about','about')->name('about');
+
+//PRODUCTOS
 // Route::resource('productos','ProductoController')
 // ->parameters(['productos'=>'productos'])
 // ->names('productos');
@@ -28,5 +30,17 @@ Route::get('/producto/{producto}','ProductoController@show')->name('productos.sh
 
 Route::delete('/producto/{producto}','ProductoController@destroy')->name('productos.destroy');
 Auth::routes();
+
+
+//PEDIDOS
+Route::get('/pedido','PedidoController@index')->name('pedidos.index');
+Route::get('/pedido/crear','PedidoController@create')->name('pedidos.create');
+Route::get('/pedido/{pedido}/editar','PedidoController@edit')->name('pedidos.edit');
+Route::patch('/pedido/{pedido}','PedidoController@update')->name('pedidos.update');
+Route::post('/pedido','PedidoController@store')->name('pedidos.store');
+Route::get('/pedido/{pedido}','PedidoController@show')->name('pedidos.show');
+
+Route::delete('/pedido/{pedido}','PedidoController@destroy')->name('pedidos.destroy');
+
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

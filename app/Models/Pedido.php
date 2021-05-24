@@ -11,6 +11,8 @@ class Pedido extends Model
 
     protected $primaryKey='PED_ID';
 
+    protected $guarded=[];
+
     public function detallePedidos()
     {
         return $this->hasMany(DetallePedido::class);
