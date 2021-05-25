@@ -10,14 +10,17 @@
     <meta name="author" content="Peter Quispe Mendoza">
 
     <!-- Styles -->
-    <!-- <link rel="stylesheet" href="{!!asset('../resources/css/app.css')}"> -->
+    <link rel="stylesheet" href="{{asset('css/app.css')}}">
 </head>
 <body>
     <header>
         @include('partials.nav')
     </header>
+    <div class="container">
     @include('partials.session_status')
+    </div>
+    
     @yield('content')
-
+    <script type="text/javascript" src="{{ asset('js/app.js')}}" defer></script>
 </body>
 </html>
