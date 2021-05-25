@@ -43,4 +43,14 @@ Route::get('/pedido/{pedido}','PedidoController@show')->name('pedidos.show');
 Route::delete('/pedido/{pedido}','PedidoController@destroy')->name('pedidos.destroy');
 
 
+//DETALLE DE PEDIDO
+Route::get('/detalle_pedido','DetallePedidoController@index')->name('detalle_pedidos.index');
+Route::get('/detalle_pedido/crear','DetallePedidoController@create')->name('detalle_pedidos.create');
+Route::get('/detalle_pedido/{detalle_pedido}/editar','DetallePedidoController@edit')->name('detalle_pedidos.edit');
+Route::patch('/detalle_pedido/{detalle_pedido}','DetallePedidoController@update')->name('detalle_pedidos.update');
+Route::post('/detalle_pedido','DetallePedidoController@store')->name('detalle_pedidos.store');
+Route::get('/detalle_pedido/{detalle_pedido}','DetallePedidoController@show')->name('detalle_pedidos.show');
+
+Route::delete('/detalle_pedido/{detalle_pedido}','DetallePedidoController@destroy')->name('detalle_pedidos.destroy');
+
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

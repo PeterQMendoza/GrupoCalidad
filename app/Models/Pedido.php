@@ -13,8 +13,9 @@ class Pedido extends Model
 
     protected $guarded=[];
 
+    // Relacion uno a muchos
     public function detallePedidos()
     {
-        return $this->hasMany(DetallePedido::class);
+        return $this->hasMany('App\Models\DetallePedido');
     }
 }

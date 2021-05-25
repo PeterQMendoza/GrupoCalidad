@@ -13,6 +13,7 @@ class CreateProductosTable extends Migration
      */
     public function up()
     {
+        if(Schema::hasTable('productos'))return;//PRIMERO TIENE QUE TENER ESTA TABLA ANTES DE AGREGAR TBL DETALE PEDIDOS
         Schema::create('productos', function (Blueprint $table) {
             $table->id('PRO_ID');
             $table->string('PRO_Descripcion');
@@ -21,6 +22,7 @@ class CreateProductosTable extends Migration
             $table->string('PRO_UM');
             $table->timestamps();
         });
+        
     }
 
     /**
@@ -30,6 +32,8 @@ class CreateProductosTable extends Migration
      */
     public function down()
     {
+        Schema::disableForeignKeyConstraints();
         Schema::dropIfExists('productos');
+        Schema::enableForeignKeyConstraints();
     }
 }

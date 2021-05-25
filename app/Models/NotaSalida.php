@@ -10,6 +10,7 @@ class NotaSalida extends Model
     use HasFactory;
 
     protected $primaryKey='NS_ID';
+    protected $guarded=[];
 
     public function pedido()
     {

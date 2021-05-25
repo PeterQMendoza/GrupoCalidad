@@ -27,6 +27,14 @@
                     <a href="{{route('pedidos.index')}}">View</a>
                 </div>
             </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                @lang('Detalles de Pedidos')
+                </a>
+                <div>
+                    <a href="{{route('detalle_pedidos.index')}}">View</a>
+                </div>
+            </li>
             <li class="nav-item">
                 <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">@lang('Others')</a>
             </li>

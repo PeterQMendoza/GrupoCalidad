@@ -10,7 +10,7 @@
     <meta name="author" content="Peter Quispe Mendoza">
 
     <!-- Styles -->
-    <link rel="stylesheet" href="{!!asset('../resources/css/app.css')}">
+    <!-- <link rel="stylesheet" href="{!!asset('../resources/css/app.css')}"> -->
 </head>
 <body>
     <header>

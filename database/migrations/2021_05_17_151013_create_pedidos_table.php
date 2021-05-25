@@ -29,6 +29,8 @@ class CreatePedidosTable extends Migration
      */
     public function down()
     {
+        Schema::disableForeignKeyConstraints();
         Schema::dropIfExists('pedidos');
+        Schema::enableForeignKeyConstraints();
     }
 }

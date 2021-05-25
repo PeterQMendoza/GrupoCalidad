@@ -17,5 +17,11 @@ class Producto extends Model
         'PRO_Precio'=>'integer',
     ];
 
+    //Relacion de uno a muchos
+    public function detallePedidos()
+    {
+        return $this->hasMany('App\Models\DetallePedido');
+    }
+
 }
 
