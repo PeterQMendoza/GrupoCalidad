@@ -35,7 +35,7 @@ class SaveProductoRequest extends FormRequest
     {
         return [
             'PRO_Descripcion.required'=>'Se necesita un nombre al producto',
-            'PRO_Stock.required'=>'Cuantas cantidades se dispone',
+            'PRO_Stock.required'=>'Cuantas cantidades se dispone en Stock',
             'PRO_Precio.boolean'=>'Seguro que tienes marcado esa casilla',
             'PRO_UM.required'=>'Como se mide este producto',
         ];

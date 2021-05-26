@@ -3,22 +3,20 @@
 @section('title','Producto | '.$producto->PRO_Descripcion)
 
 @section('content')
+<div class="container-md">
+    <div class="row">
+        <div class="col">
+            <p class="lead">Formulario para editar producto</p>
+            <form method="POST" action="{{route('productos.update',$producto)}}">
+                @method('patch')
+                @include('productos._form',['btnText'=>'Guardar'])
+            </form>
+        </div>
+        <div class="col">
+        @include('partials.validation_errors')
+        </div>
+    </div>
+</div>
 
-<h1>Editar producto</h1>
-
-@if($errors->any())
-    <ul>
-    @foreach($errors->all() as $error)
-    <li>{{$error}}</li>
-    </ul>
-    @endforeach
-@endif
-
-<form method="POST" action="{{route('productos.update',$producto)}}">
-    @method('patch')
-
-    @include('productos._form',['btnText'=>'Guardar'])
-
-</form>
 
 @endsection

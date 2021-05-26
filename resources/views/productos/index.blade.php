@@ -12,20 +12,30 @@
             <div class="card h-100">
                 <!-- <img src="..." class="card-img-top" alt="..."> -->
                 <div class="card-body">
-                    <div class="container clearfix">
-                        <div class="row">
-                            <div class="col"><h5 class="card-title">{{$pro->PRO_Descripcion}}</h5></div>
-                            <div class="col">
+                    <div class="container">
+                        <div class="row align-items-start">
+                            <div class="col-8">
+                                <h5 class="card-title">{{$pro->PRO_Descripcion}}</h5>
+                            </div>
+                            <div class="col-4">
                                 <span class="babge badge-pill {{($pro->PRO_Stock>15)?'badge-success':(($pro->PRO_Stock>10)?'badge-warning':'badge-danger')}}">{{$pro->PRO_Stock}}</span>
                                 <span class="sr-only">unread messages</span>
                             </div>
                         </div>
+                        <div class="row align-items-center">
+                            <div class="col">
+                                <p class="card-text">{{$pro->PRO_Precio}}</p>
+                            </div>
+                        </div>
+                        <div class="row align-items-end">
+                            <div class="col">
+                                <a href="{{route('productos.show',$pro)}}" class="btn btn-primary">@lang('Details')</a>
+                            </div>
+                        </div>
                     </div>
-                    <p class="card-text">{{$pro->PRO_Precio}}</p>
-                    <a href="{{route('productos.show',$pro)}}" class="btn btn-primary">@lang('Details')</a>
                 </div>
                 <div class="card-footer">
-                    <small class="text-muted">{{$pro->created_at->diffForHumans()}}</small>
+                    <small class="text-muted">Agregado {{$pro->created_at->diffForHumans()}}</small>
                 </div>
             </div>
         </div>

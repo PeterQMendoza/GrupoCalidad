@@ -16,7 +16,7 @@
                 @lang('Productos')
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="{{route('productos.index')}}">View</a>
+                    <a class="dropdown-item" href="{{route('productos.index')}}">Ver Productos</a>
                 </div>
             </li>
             <li class="nav-item dropdown">
@@ -24,7 +24,7 @@
                 @lang('Pedidos')
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="{{route('pedidos.index')}}">View</a>
+                    <a class="dropdown-item" href="{{route('pedidos.index')}}">Ver Pedidos</a>
                 </div>
             </li>
             <li class="nav-item dropdown">

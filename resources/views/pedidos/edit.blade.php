@@ -4,21 +4,21 @@
 
 @section('content')
 
-<h1>Editar pedido</h1>
 
-@if($errors->any())
-    <ul>
-    @foreach($errors->all() as $error)
-    <li>{{$error}}</li>
-    </ul>
-    @endforeach
-@endif
-
-<form method="POST" action="{{route('pedidos.update',$pedido)}}">
-    @method('patch')
-
-    @include('pedidos._form',['btnText'=>'Guardar'])
-
-</form>
+<div class="container-md">
+    <div class="row">
+        <div class="col">
+        <h1>Editar pedido</h1>
+        <p class="lead">Formulario para editar Pedido</p>
+        <form method="POST" action="{{route('pedidos.update',$pedido)}}">
+            @method('patch')
+            @include('pedidos._form',['btnText'=>'Guardar'])
+        </form>
+        </div>
+        <div class="col">
+        @include('partials.validation_errors')
+        </div>
+    </div>
+</div>
 
 @endsection
