@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="desciption" content="">
     <meta name="author" content="Peter Quispe Mendoza">
+    <link rel="icon" type="image/png" href="{{asset('img/saifema.png')}}" />
 
     <!-- Styles -->
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
