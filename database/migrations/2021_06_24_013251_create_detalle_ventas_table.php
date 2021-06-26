@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateDetalleHojaRequerimientosTable extends Migration
+class CreateDetalleVentasTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,11 @@ class CreateDetalleHojaRequerimientosTable extends Migration
      */
     public function up()
     {
-        Schema::create('detalle_hoja_requerimientos', function (Blueprint $table) {
-            $table->id();
-            $table->string('DHR_Descripcion');
+        Schema::create('detalle_ventas', function (Blueprint $table) {
+            $table->id('Id');
+            $table->integer('cantidad');
+            $table->decimal('precio',$precision=8,$scale=2);
+            $table->decimal('descuento',$precision=8,$scale=2);
             $table->timestamps();
         });
     }
@@ -27,6 +29,6 @@ class CreateDetalleHojaRequerimientosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('detalle_hoja_requerimientos');
+        Schema::dropIfExists('detalle_ventas');
     }
 }

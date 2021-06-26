@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateNotaSalidasTable extends Migration
+class CreateMarcasTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,9 @@ class CreateNotaSalidasTable extends Migration
      */
     public function up()
     {
-        Schema::create('nota_salidas', function (Blueprint $table) {
-            $table->id('NS_ID');
+        Schema::create('marcas', function (Blueprint $table) {
+            $table->id('Id');
+            $table->string('nombre');
             $table->timestamps();
         });
     }
@@ -26,6 +27,6 @@ class CreateNotaSalidasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('nota_salidas');
+        Schema::dropIfExists('marcas');
     }
 }

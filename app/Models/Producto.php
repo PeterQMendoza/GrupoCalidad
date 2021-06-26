@@ -9,19 +9,19 @@ class Producto extends Model
 {
     use HasFactory;
 
-    protected $primaryKey='PRO_ID';
+    protected $primaryKey='Id';
 
     protected $guarded=[];
 
     protected $casts=[
-        'PRO_Precio'=>'integer',
+        'precio'=>'decimal:2',
     ];
 
     //Relacion de uno a muchos
-    public function detallePedidos()
-    {
-        return $this->hasMany('App\Models\DetallePedido');
-    }
+    // public function detallePedidos()
+    // {
+    //     return $this->hasMany('App\Models\DetallePedido');
+    // }
 
 }
 

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateDetalleNotaSalidasTable extends Migration
+class CreateRolesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,9 @@ class CreateDetalleNotaSalidasTable extends Migration
      */
     public function up()
     {
-        Schema::create('detalle_nota_salidas', function (Blueprint $table) {
-            $table->id();
-            $table->string('DNS_Descripcion');
+        Schema::create('roles', function (Blueprint $table) {
+            $table->id('Id');
+            $table->string('nombre')->unique();
             $table->timestamps();
         });
     }
@@ -27,6 +27,6 @@ class CreateDetalleNotaSalidasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('detalle_nota_salidas');
+        Schema::dropIfExists('roles');
     }
 }

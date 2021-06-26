@@ -6,7 +6,7 @@
 <div class="container-md">
     <div class="row">
         <div class="col">
-            <p class="lead">Formulario para crear producto</p>
+            <p class="lead">Formulario para agregar nuevo producto</p>
             <form method="POST" action="{{route('productos.store')}}">
                 @include('productos._form',['btnText'=>'Crear'])
             </form>

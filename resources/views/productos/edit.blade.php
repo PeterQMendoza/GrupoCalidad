@@ -1,6 +1,6 @@
 @extends('layout')
 
-@section('title','Producto | '.$producto->PRO_Descripcion)
+@section('title','Producto | '.$producto->nombre)
 
 @section('content')
 <div class="container-md">

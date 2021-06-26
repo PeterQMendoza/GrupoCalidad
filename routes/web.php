@@ -22,13 +22,13 @@ Route::view('/about','about')->name('about');
 // ->parameters(['productos'=>'productos'])
 // ->names('productos');
 
-Route::resource('productos','ProductoController');
+Route::resource('productos','ProductoController')->names('productos');
 
-//PEDIDOS
-Route::resource('pedidos','PedidoController');
+// PEDIDOS
+// Route::resource('pedidos','PedidoController');
 
-//DETALLE DE PEDIDO
-Route::resource('detalle_pedidos','DetallePedidoController');
+// DETALLE DE PEDIDO
+// Route::resource('detalle_pedidos','DetallePedidoController');
 
 Auth::routes(['register'=>false]);
 

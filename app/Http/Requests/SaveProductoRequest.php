@@ -24,20 +24,26 @@ class SaveProductoRequest extends FormRequest
     public function rules()
     {
         return [
-            'PRO_Descripcion'=>'required',
-            'PRO_Stock'=>'required',
-            'PRO_Precio'=>'boolean',
-            'PRO_UM'=>'required',
+            'codigo'=>'required',
+            'nombre'=>'required',
+            'precio'=>'required',
+            'stock'=>'required',
+            'vencimiento'=>'required',
+            'estado'=>'required',
+            'um'=>'required',
         ];
     }
 
     public function messages()
     {
         return [
-            'PRO_Descripcion.required'=>'Se necesita un nombre al producto',
-            'PRO_Stock.required'=>'Cuantas cantidades se dispone en Stock',
-            'PRO_Precio.boolean'=>'Seguro que tienes marcado esa casilla',
-            'PRO_UM.required'=>'Como se mide este producto',
+            'codigo.required'=>'No tiene codigo',
+            'nombre.required'=>'Se necesita un nombre para reconocer producto',
+            'precio.required'=>'el precio tiene que ser en decimal',
+            'stock.required'=>'Cuantas cantidades dispone de este producto',
+            'vencimiento.required'=>'¿El producto tiene vencimiento? Por favor indique fecha',
+            'estado.required'=>'En que estado se encuentra el producto',
+            'um.required'=>'Como mides la cantidad del producto',
         ];
     }
 

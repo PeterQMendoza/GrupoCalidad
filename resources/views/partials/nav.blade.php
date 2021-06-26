@@ -15,19 +15,19 @@
                 <a class="nav-link" href="{{route('about')}}">@lang('About')</a>
             </li>
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a class="nav-link dropdown-toggle" href="#" id="ndProductos" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 @lang('Productos')
                 </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <div class="dropdown-menu" aria-labelledby="ndProductos">
                     <a class="dropdown-item" href="{{route('productos.index')}}">Ver Productos</a>
                 </div>
             </li>
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a class="nav-link dropdown-toggle" href="#" id="ndPedidos" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 @lang('Pedidos')
                 </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="{{route('pedidos.index')}}">Ver Pedidos</a>
+                <div class="dropdown-menu" aria-labelledby="ndPedidos">
+                    <a class="dropdown-item" href="#">Ver Pedidos</a>
                 </div>
             </li>
             <!-- <li class="nav-item dropdown">
@@ -35,7 +35,7 @@
                 @lang('Detalles de Pedidos')
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="{{route('detalle_pedidos.index')}}">View</a>
+                    <a class="dropdown-item" href="#">View</a>
                 </div>
             </li> -->
             <li class="nav-item">
@@ -46,18 +46,18 @@
             </li>
             <li class="nav-item dropdown">
                 @auth
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a class="nav-link dropdown-toggle" href="#" id="ndLogoutUser" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     {{auth()->user()->name}}
                 </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <div class="dropdown-menu" aria-labelledby="ndLogoutUser">
                     <a class="nav-link" href="#" onclick="event.preventDefault();
                         document.getElementById('logout-form').submit();">@lang('Logout')</a>
                 </div>
                 @else
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a class="nav-link dropdown-toggle" href="#" id="ndLoginUser" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     User
                 </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <div class="dropdown-menu" aria-labelledby="ndLoginUser">
                     <a class="nav-link {{setActive('login')}}" href="{{route('login')}}">@lang('Login')</a>
                 </div>
                 @endauth

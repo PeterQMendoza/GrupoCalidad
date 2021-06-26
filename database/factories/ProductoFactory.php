@@ -22,6 +22,13 @@ class ProductoFactory extends Factory
     public function definition()
     {
         return [
+            'codigo'=>'pro_001',
+            'nombre'=>'producto',
+            'precio'=>$this->faker->numberBetween(1,500),
+            'stock'=>$this->faker->numberBetween(1,300),
+            'vencimiento'=>$this->faker->date(),
+            'estado'=>'vigente',
+            'um'=>'unds',
             //
         ];
     }

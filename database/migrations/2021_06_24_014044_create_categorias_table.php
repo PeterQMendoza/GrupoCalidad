@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateHojaRequerimientosTable extends Migration
+class CreateCategoriasTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,10 @@ class CreateHojaRequerimientosTable extends Migration
      */
     public function up()
     {
-        Schema::create('hoja_requerimientos', function (Blueprint $table) {
-            $table->id('HR_ID');
+        Schema::create('categorias', function (Blueprint $table) {
+            $table->id('Id');
+            $table->string('nombre')->unique();
+            $table->string('descripcion');
             $table->timestamps();
         });
     }
@@ -26,6 +28,6 @@ class CreateHojaRequerimientosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('hoja_requerimientos');
+        Schema::dropIfExists('categorias');
     }
 }

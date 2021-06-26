@@ -15,11 +15,14 @@ class CreateProductosTable extends Migration
     {
         if(Schema::hasTable('productos'))return;//PRIMERO TIENE QUE TENER ESTA TABLA ANTES DE AGREGAR TBL DETALE PEDIDOS
         Schema::create('productos', function (Blueprint $table) {
-            $table->id('PRO_ID');
-            $table->string('PRO_Descripcion');
-            $table->boolean('PRO_Precio')->default(0);
-            $table->integer('PRO_Stock');
-            $table->string('PRO_UM');
+            $table->id('Id');
+            $table->string('codigo')->unique();
+            $table->string('nombre');
+            $table->decimal('precio',$precision=8,$scale=2)->default(0);
+            $table->integer('stock');
+            $table->date('vencimiento');
+            $table->string('estado');
+            $table->string('um');
             $table->timestamps();
         });
         

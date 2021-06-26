@@ -1,6 +1,6 @@
 @extends('layout')
 
-@section('title','Producto | '.$producto->PRO_Descripcion)
+@section('title','Producto | '.$producto->nombre)
 
 @section('content')
 <div class="container">
@@ -16,23 +16,27 @@
             <tbody>
                 <tr>
                     <td>ID</td>
-                    <td >{{$producto->PRO_ID}}</td>
+                    <td >{{$producto->Id}}</td>
                 </tr>
                 <tr>
-                    <td>Descripcion</td>
-                    <td >{{$producto->PRO_Descripcion}}</td>
+                    <td>Codigo</td>
+                    <td >{{$producto->codigo}}</td>
                 </tr>
                 <tr>
-                    <td>Con Precio</td>
-                    <td >{{$producto->PRO_Precio}}</td>
+                    <td>Nombre</td>
+                    <td >{{$producto->nombre}}</td>
                 </tr>
                 <tr>
-                    <td>Cantidad en Stock</td>
-                    <td >{{$producto->PRO_Stock}}</td>
+                    <td>Tiene precio</td>
+                    <td >{{$producto->precio}}</td>
                 </tr>
                 <tr>
-                    <td>Unidades de Medida</td>
-                    <td >{{$producto->PRO_UM}}</td>
+                    <td>Cantidad en stock</td>
+                    <td >{{$producto->stock}}</td>
+                </tr>
+                <tr>
+                    <td>Fecha de caducidad</td>
+                    <td >{{$producto->vencimiento}}</td>
                 </tr>
             </tbody>
         </table>

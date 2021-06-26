@@ -24,8 +24,17 @@ class ProductoController extends Controller
     }
     public function create()
     {
+        $s=getdate()['seconds'];
+        $m=getdate()['minutes'];
+        $h=getdate()['hours'];
+        $d=getdate()['mday'];
+        $mes=getdate()['mon'];
+        $y=getdate()['year'];
+        $cod='pro'.$s.$m.$h.$d.$mes.$y;
+
         return view('productos.create',[
-            'producto'=>new Producto
+            'cod'=>$cod,
+            'producto'=>new Producto,
         ]);
     }
 
@@ -39,7 +48,9 @@ class ProductoController extends Controller
 
     public function edit(Producto $producto)
     {
+        $cod=$producto->codigo;
         return view('productos.edit',[
+            'cod'=>$cod,
             'producto'=>$producto
         ]);
     }
