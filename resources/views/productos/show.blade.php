@@ -38,6 +38,10 @@
                     <td>Fecha de caducidad</td>
                     <td >{{$producto->vencimiento}}</td>
                 </tr>
+                <tr>
+                    <td>Categoria</td>
+                    <td ></td>
+                </tr>
             </tbody>
         </table>
     </div>

@@ -21,6 +21,7 @@ class CreateProductosTable extends Migration
             $table->decimal('precio',$precision=8,$scale=2)->default(0);
             $table->integer('stock');
             $table->date('vencimiento');
+            $table->foreignId('idcategoriaProducto');
             $table->string('estado');
             $table->string('um');
             $table->timestamps();

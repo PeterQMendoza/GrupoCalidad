@@ -25,10 +25,14 @@ Route::view('/about','about')->name('about');
 Route::resource('productos','ProductoController')->names('productos');
 
 // PEDIDOS
-// Route::resource('pedidos','PedidoController');
+// Route::resource('pedidos','PedidoController')->names('pedidos');
 
 // DETALLE DE PEDIDO
 // Route::resource('detalle_pedidos','DetallePedidoController');
+
+// CATEGORIA
+Route::resource('categorias','CategoriaController');
+
 
 Auth::routes(['register'=>false]);
 

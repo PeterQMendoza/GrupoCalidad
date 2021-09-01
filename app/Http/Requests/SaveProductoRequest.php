@@ -31,6 +31,7 @@ class SaveProductoRequest extends FormRequest
             'vencimiento'=>'required',
             'estado'=>'required',
             'um'=>'required',
+            'idcategoriaProducto'=>'integer',
         ];
     }
 
@@ -44,6 +45,7 @@ class SaveProductoRequest extends FormRequest
             'vencimiento.required'=>'¿El producto tiene vencimiento? Por favor indique fecha',
             'estado.required'=>'En que estado se encuentra el producto',
             'um.required'=>'Como mides la cantidad del producto',
+            'idcategoriaProducto'=>'Cual es la categoria',
         ];
     }
 

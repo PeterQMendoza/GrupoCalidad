@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use App\Models\Producto;
+
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class ProductoFactory extends Factory
@@ -26,7 +27,9 @@ class ProductoFactory extends Factory
             'nombre'=>'producto',
             'precio'=>$this->faker->numberBetween(1,500),
             'stock'=>$this->faker->numberBetween(1,300),
-            'vencimiento'=>$this->faker->date(),
+            'vencimiento'=>'1979-06-09',
+            //$this->faker->date($format = 'Y-m-d', $max = 'now'),
+            'idcategoriaProducto'=>$this->faker->numberBetween(1,5),
             'estado'=>'vigente',
             'um'=>'unds',
             //

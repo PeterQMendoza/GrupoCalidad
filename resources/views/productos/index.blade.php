@@ -22,8 +22,8 @@
     <div class="row row-cols-1 row-cols-md-4">
         @forelse($producto as $pro)
         <div class="col mb-4">
-            <div class="card p-2 bg-white h-100">
-                <img src="{{asset('img/014-image.svg')}}" class="card-img-top" alt="...">
+            <div class="card bg-white">
+                <img src="{{asset('img/014-image.svg')}}" class="card-img-top" alt="..." style="width:30%;display:block;margin:auto;" >
                 <div class="card-body">
                     <p class="card-title">
                         {{$pro->nombre}}
@@ -43,7 +43,7 @@
         </div>
         @empty
         <div class="col mb-4">
-            <div class="card p-2 bg-white h-100">
+            <div class="card bg-white">
                 <!-- <img src="..." class="card-img-top" alt="..."> -->
                 <div class="card-body">
                     <h5 class="card-title">Productos vacios</h5>

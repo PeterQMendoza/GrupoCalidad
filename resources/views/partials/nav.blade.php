@@ -23,11 +23,11 @@
                 </div>
             </li>
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="ndPedidos" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                @lang('Pedidos')
+                <a class="nav-link dropdown-toggle" href="#" id="ndCategoria" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                @lang('Categorias')
                 </a>
-                <div class="dropdown-menu" aria-labelledby="ndPedidos">
-                    <a class="dropdown-item" href="#">Ver Pedidos</a>
+                <div class="dropdown-menu" aria-labelledby="ndCategoria">
+                    <a class="dropdown-item" href="{{route('categorias.index')}}">Ver Categorias</a>
                 </div>
             </li>
             <!-- <li class="nav-item dropdown">

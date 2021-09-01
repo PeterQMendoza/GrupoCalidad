@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Models;
+use App\Models\ProductoCategoria;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -17,11 +18,11 @@ class Producto extends Model
         'precio'=>'decimal:2',
     ];
 
-    //Relacion de uno a muchos
-    // public function detallePedidos()
-    // {
-    //     return $this->hasMany('App\Models\DetallePedido');
-    // }
+    public function producto_categoria()
+    {
+        return $this->belongsTo(ProductoCategoria::class);
+    }
+
 
 }
 

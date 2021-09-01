@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\SaveProductoRequest;
 use App\Models\Producto;
+use App\Models\Categoria;
+use App\Models\ProductoCategoria;
 use Illuminate\Http\Request;
 
 class ProductoController extends Controller
@@ -35,12 +37,12 @@ class ProductoController extends Controller
         return view('productos.create',[
             'cod'=>$cod,
             'producto'=>new Producto,
+            'categoria'=>Categoria::latest()->paginate()
         ]);
     }
 
     public function store(SaveProductoRequest $request)
     {
-        
         Producto::create($request->validated());
 
         return redirect()->route('productos.index')->with('status','El producto fue agregado con exito');

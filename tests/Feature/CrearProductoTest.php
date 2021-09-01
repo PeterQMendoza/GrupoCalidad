@@ -5,6 +5,7 @@ namespace Tests\Feature;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Testing\Fluent\AssertableJson;
+use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Illuminate\Testing\TestView;
 use Tests\TestCase;
 use App\Models\Producto;
@@ -17,15 +18,22 @@ class CrearProductoTest extends TestCase
      * @return void
      */
     /** Pruebas HTTP */
+    use RefreshDatabase;
+
     public function test_vistaProducto()
     {
+        $this->withoutExceptionHandling();
         $response = $this->withHeaders([
-            'PRO_Descripcion'=>'Producto1',
-            'PRO_Precio'=>'1',
-            'PRO_Stock'=>'12',
-            'PRO_UM'=>'Unds'
+            'codigo'=>'pro0458966',
+            'nombre'=>'producto1',
+            'precio'=>120.0,
+            'stock'=>13,
+            'vencimiento'=>'2021-07-24',
+            'idcategoriaProducto'=>1,
+            'estado'=>'En inventario',
+            'um'=>'unds',
         ])->get('/productos');
-        $response->assertStatus(200)
+        $response->assertOk(200)
         ->assertSee('Productos');
     }
     

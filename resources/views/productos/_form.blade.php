@@ -16,11 +16,9 @@
     </div>
 </div>
 <div class="form-row">
-    <div class="form-group col-md-8">
-        <div class="form-check">
-            <label for="precio_v">Precio</label>
-            <input class="form-control" placeholder="precio" type="text" name="precio" id="precio" value="{{old('precio',$producto->precio)}}">
-        </div>
+    <div class="form-group col-md-10">
+        <label for="precio_v">Precio</label>
+        <input class="form-control" placeholder="precio" type="text" name="precio" id="precio" value="{{old('precio',$producto->precio)}}">
     </div>
 </div>
 <div class="form-row">
@@ -39,46 +37,19 @@
 </div>
 <div class="form-row">
     <div class="form-group col-md-8">
-        <label for="estado">Categoria</label>
+        <label for="idcategoriaProducto">Categoria</label>
         <select id="inputState" class="form-control">
-            <option selected>Categoria 1</option>
-            <option>categoria 2</option>
-            <option>categoria 3</option>
-      </select>
+            @forelse($categoria as $cat)
+            <option value="{{$cat->id}}" selected >{{$cat->nombre}}</option>
+            @empty
+            <option readonly>No hay categorias</option>
+            @endforelse
+        </select>
     </div>
-    <!-- <div class="form-group col-md-2">
-        <label for="agregar_categoria">Agregar</label>
-        <button class="form-control btn btn-success" type="button" data-toggle="modal" data-target="#agregarCategoria">+
-        </button>
-        <div class="modal fade" id="agregarCategoria" tabindex="-1" aria-labelledby="agregarCategoria" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="agregarCategoria">Agregar Nueva Categoria</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <form>
-                    <div class="form-group">
-                        <label for="recipient-name" class="col-form-label">Nombre</label>
-                        <input type="text" class="form-control" id="recipient-name">
-                    </div>
-                    <div class="form-group">
-                        <label for="message-text" class="col-form-label">Descripcion</label>
-                        <textarea class="form-control" id="message-text"></textarea>
-                    </div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                    <button type="button" class="btn btn-primary">Crear Categoria</button>
-                </div>
-                </div>
-            </div>
-        </div>
-    </div> -->
+    <div class="form-group col-md-2">
+        <label>Agregar</label>
+        <a href="{{route('categorias.create')}}" class="form-control btn btn-success">+</a>
+    </div>
 </div>
 <div class="form-row">
     <div class="form-group col-md-8">
@@ -87,41 +58,40 @@
             <option selected>Marca 1</option>
             <option>Marca 2</option>
             <option>Marca 3</option>
-      </select>
+        </select>
     </div>
     <!-- <div class="form-group col-md-2">
         <label for="agregar_marca">Agregar</label>
         <button class="form-control btn btn-success" type="button" data-toggle="modal" data-target="#agregarMarca">+
-        </button>
+            </button>
         <div class="modal fade" id="agregarMarca" tabindex="-1" aria-labelledby="agregarMarca" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="agregarMarca">Agregar Nueva Marca</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
+                        <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
                     <form>
-                    <div class="form-group">
-                        <label for="recipient-name" class="col-form-label">Nombre</label>
-                        <input type="text" class="form-control" id="recipient-name">
-                    </div>
-                    <div class="form-group">
-                        <label for="message-text" class="col-form-label">Descripcion</label>
-                        <textarea class="form-control" id="message-text"></textarea>
-                    </div>
+                        <div class="form-group">
+                            <label for="recipient-name" class="col-form-label">Nombre</label>
+                            <input type="text" class="form-control" id="recipient-name">
+                        </div>
+                        <div class="form-group">
+                            <label for="message-text" class="col-form-label">Descripcion</label>
+                            <textarea class="form-control" id="message-text"></textarea>
+                        </div>
                     </form>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
                     <button type="button" class="btn btn-primary">Crear Categoria</button>
                 </div>
-                </div>
             </div>
         </div>
-    </div> -->
+    </div>-->
 </div>
 <button type="submit" class="btn btn-primary">{{$btnText}}</button>
 

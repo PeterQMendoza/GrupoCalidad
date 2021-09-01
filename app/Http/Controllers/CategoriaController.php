@@ -2,84 +2,65 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\SaveCategoriaRequest;
 use App\Models\Categoria;
 use Illuminate\Http\Request;
 
 class CategoriaController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
         //
+        return view('categorias.index',[
+            'categoria'=>Categoria::latest()->paginate()
+        ]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
         //
+        return view('categorias.create',[
+            'categoria'=>new Categoria
+        ]);
     }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
+    
+    public function store(SaveCategoriaRequest $request)
     {
         //
+        Categoria::create($request->validated());
+        return redirect()->route('categorias.index')->with('status','La categoria fue agregada con exito');
     }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Categoria  $categoria
-     * @return \Illuminate\Http\Response
-     */
+   
     public function show(Categoria $categoria)
     {
-        //
+        return view('categorias.show',[
+            'categoria'=>$categoria
+        ]);
     }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Categoria  $categoria
-     * @return \Illuminate\Http\Response
-     */
+    
     public function edit(Categoria $categoria)
     {
         //
+        return view('categorias.edit',[
+            'categoria'=>$categoria
+        ]);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Categoria  $categoria
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Categoria $categoria)
+    
+    public function update(Categoria $categoria,SaveCategoriaRequest $request)
     {
         //
+        $categoria->update($request->validated());
+        return redirect()->route('categorias.show',$categoria)->with('status','Se actualizo la categoria');
     }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Categoria  $categoria
-     * @return \Illuminate\Http\Response
-     */
+    
+    
     public function destroy(Categoria $categoria)
     {
         //
+        $categoria->delete();
+        return redirect()->route('categorias.index')->with('status','La categoria fue eliminada correctamente');
     }
 }
+
