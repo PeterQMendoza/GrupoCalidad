@@ -14,7 +14,7 @@
         "laravel/tinker": "^2.5",
         "laravel/ui": "^3.2",
         "laravel/socialite":"^5.1",
-        "league/flysystem": "1.1.4"
+        "league/flysystem": "1.1.5"
     },
     "require-dev": {
         "facade/ignition": "^2.5",
